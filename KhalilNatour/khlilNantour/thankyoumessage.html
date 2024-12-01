@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>   
+</head>
+<body>
+    <h1>Thank You!</h1>
+    <p id="message"></p>
+
+    
+    <script>
+        // iused some AI
+        var params = new URLSearchParams(window.location.search);
+        var message = params.get('message');
+
+        // Display the message on the page
+        document.getElementById('message').innerText = message;
+    </script>
+</body>
+</html>

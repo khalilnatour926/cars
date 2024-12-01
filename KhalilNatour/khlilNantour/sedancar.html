@@ -1,0 +1,553 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viepoint" content="width-device, initial-scale = 1.0">
+        <title>
+            Avialble Sedan Cars  
+        </title>
+
+        <style>
+
+            body
+            {
+                background-image: url(assets/background.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            .container2 
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .gallery 
+            {
+                display: grid;
+                grid-template-columns: 250px 250px; 
+                grid-auto-rows: 200px;
+                gap: 100px;
+                padding-bottom: 200px;
+                margin-right: 5%;
+            }
+          
+            .title
+            {
+                text-align: center;
+                border-radius: 30px;
+                backdrop-filter: blur(5px);
+                width: max-content;
+                height: 100px;
+                padding-top: 2px;
+                background-color: rgba(255, 255, 255, 0.5);
+                font-size: 16px;
+                font-weight: bold;
+                margin: auto;
+                margin-bottom: 50px;
+            }
+
+            #title2
+            {
+                margin-bottom: 150px;
+            }
+
+
+            .item 
+            {
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                margin: 50px;
+            }
+
+            .item img
+            {
+                display: block;
+                box-shadow: 0 4px 8px rgba(1, 2, 3, 2);
+                border-radius: 3%;
+            }
+
+            #button1
+            {
+                margin-top: 10%;
+            }
+            #button2
+            {
+                margin-top: 10%;
+            }
+            #button3
+            {
+                margin-top: 10%;
+            }
+            #button4
+            {
+                margin-top: 10%;
+            }
+
+            #button5
+            {
+                margin-top: 10%;
+            }
+            #button6
+            {
+                margin-top: 10%;
+            }
+
+            #image1 
+            {
+               transition: transform 0.3s ease;
+            }
+
+            #image1:hover 
+            {
+                transform: scale(1.2) translate(-5%, -5%);
+                cursor: pointer;
+            }
+
+            #image2 
+            {
+               transition: transform 0.3s ease;
+            }
+
+            #image2:hover 
+            {
+                transform: scale(1.2) translate(5%, -5%);
+                cursor: pointer;
+            }
+
+            #image3 
+            {
+                margin-top: 30%;
+               transition: transform 0.3s ease;
+            }
+
+            #image3:hover 
+            {
+                transform: scale(1.2) translate(-5%, -5%);
+                cursor: pointer;
+            }
+
+            #image4 
+            {
+                margin-top: 30%;
+
+               transition: transform 0.3s ease;
+            }
+
+            #image4:hover 
+            {
+                transform: scale(1.2) translate(-5%, -5%);
+                cursor: pointer;
+            }
+
+            #image5 
+            {
+                margin-top: 60%;
+               transition: transform 0.3s ease;
+            }
+
+            #image5:hover 
+            {
+                transform: scale(1.2) translate(-5%, 5%);
+                cursor: pointer;
+            }
+
+            #image6 
+            {  margin-top: 60%;
+               transition: transform 0.3s ease;
+            }
+
+            #image6:hover 
+            {
+                transform: scale(1.2) translate(5%, 5%);
+                cursor: pointer;
+            }
+
+            
+            .menubar 
+            {
+                background-color: #a99898; 
+                padding: 5px 0; 
+            }
+
+            .menubar ul 
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menubar ul li
+            {
+                display: inline-block; /* Display menu items horizontally */
+                margin-right: 40px; /* Add margin between menu items */
+            }
+
+            .menubar ul li a 
+            {
+                color: white;
+                font-weight: bold;
+                text-decoration: none; 
+                padding: 10px 20px; /* Add padding to menu items */
+                display: block;
+            }
+
+            .menubar ul ul
+             {
+                display: none;
+                position: absolute; 
+                background-color: #333; 
+                border-radius: 8px; 
+                border: 3px solid black;
+                box-shadow: 0px 10px 10px ;
+             }
+
+            .menubar ul ul li 
+            {
+                display: block; /* Display submenu items vertically */
+                margin-right: 0; 
+                transition: background-color 0.3s ease, font-size 0.3s ease;
+            }
+
+            .menubar ul ul li:hover 
+            {
+                background-color: #555;
+                font-size: 18px; 
+            }
+
+            .menubar ul ul li a 
+            {
+                padding: 10px 15px; /* Add padding to submenu items */
+            }
+
+
+            .menubar ul li:hover > ul 
+            {
+                display: block;
+            }
+
+
+            .contact
+            {
+                text-align: center;
+                font-size: 10px;
+                width: 100%;
+                
+            }
+
+            .button
+            {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                padding: 10px 10px;
+                border-radius: 5px;
+                background: linear-gradient(to bottom, rgb(213, 194, 194), rgb(142, 131, 131));
+                transition: transform 0.8s ease;
+            }
+
+            .button:hover
+            {
+                transform: scale(1.05);
+                background: linear-gradient(to bottom, rgb(137, 85, 85), rgb(88, 29, 29));
+                transition: background 0.8s ease;
+
+            }
+            .button-link
+            {
+                text-decoration: none;
+                color: black;
+            }
+
+            table 
+            {
+                width: 80%;
+                margin: auto;
+                border-collapse: separate;
+                border-spacing: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            table caption
+            {
+                margin-top: 20px;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            table caption:hover
+            {
+                transform: scale(1.1);
+                color: #e7cfcf;
+
+            }
+
+            th, td 
+            {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+
+            th 
+            {
+                background-color: #f2f2f2;
+                color: blue;
+            }
+
+           
+
+            tr:nth-child(even) 
+            {
+                background-color: #7b5c5c;
+            }
+
+            tr:nth-child(odd) 
+            {
+                background-color: #6d6969;
+                color: white;
+            }
+
+            th, td 
+            {
+                box-shadow: 0px 0px 0px 1px #ddd; /* Adding box-shadow to create visual border */
+            }
+
+            td 
+            {
+                padding: 15px;
+            }
+
+            .trip-form 
+            {
+                width: 80%;
+                margin: 50px auto;
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(38, 35, 35, 0.1);
+                padding: 20px;
+            }
+            .container
+            {
+                display: block;
+            }
+
+            .exp
+            {
+                padding: 5px 5px;
+            }
+
+            .exp-button
+            {
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            
+            .modal-overlay
+            {
+                display: flex;
+                position: fixed;
+                top: 0; 
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            #row1:hover, #row3:hover, #row5:hover
+            {
+                transform: scale(1.2);
+            }
+
+            #row2:hover td, #row4:hover td, #row6:hover td 
+            {
+                transform: scale(1.2);
+                background: rgba(157, 32, 32, 0.8);
+            }
+            
+
+
+        </style>
+
+    </head> 
+
+    <body>
+        
+        <script>
+            
+            function showSpecs(rowId) 
+            {
+                var modalOverlay = document.createElement('div');
+                modalOverlay.classList.add('modal-overlay');
+
+                var modalContent = document.createElement('tr');
+
+                var rowContent = document.getElementById(rowId).innerHTML;
+                modalContent.innerHTML = rowContent;
+
+                modalOverlay.appendChild(modalContent);
+                document.body.appendChild(modalOverlay);
+
+                modalOverlay.addEventListener('click', function() {
+                    document.body.removeChild(modalOverlay);
+                 });
+            }
+            
+        </script>
+           <!--Menu Bar-->
+
+           
+        <div class = "container">
+          
+            <div class = "exp">
+                <button class="exp-button"><a href="index1.html" class = "button-link">Back</a></button>
+                <button class="exp-button"><a href="suvcar.html" class = "button-link">Next</a></button>
+            </div>
+            <nav class = "menubar">
+                <ul class = "row">
+                    <li class = "column"><a href="index1.html" class = "menulinks">Home</a></li>
+                    <li class = "column"><a href="index1.html#Book" class = "menulinks">Booking</a>
+                        <ul class ="row">
+                            <li class = "roww"><a href="index1.html#offers" class = "menulinks">Offers</a></li>
+                            <li class = "roww"><a href="index1.html#vip" class = "menulinks">VIP Pick Up</a></li>
+                        </ul>
+                    </li>
+                    <li  class = "column"><a class = "menulinks" href="index1.html#reviews-section">Review</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <br><br><br>
+        <div class ="contact">
+            <h1 style = "color: white;">Contact information:</h1>
+            <button class = "button"><a href="mailto:khalil.natour@gamil.com" class= "button-link">Email</a></button>
+                
+            <!--here i got this from online sources-->
+            <button class = "button"><a href="https://wa.me/+96176774594" class= "button-link">Watsapp</a></button>
+         </div>
+        
+
+         <br>
+        
+        
+         <div class = "title"><h1  align = "center">Her is the table below for Sedan we provide</h1></div>
+        <table border = "2">
+            <caption>AVAILABILITY AND SPECIFICATIONS</caption>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Transmission Type</th>
+                <th>Number of Seats</th>
+                <th>Mpg</th>
+                <th>hp</th>
+                <th>Price</th>
+            </tr>
+            <tr id = "row1">
+                <td>BMW</td>
+                <td>3 Series</td>
+                <td>Manual</td>
+                <td>4</td>
+                <td>28</td>
+                <td>220</td>
+                <td bgcolor="red">$45,000</td>
+            </tr>
+            <tr id = "row2">
+                <td>BMW</td>
+                <td>5 Series</td>
+                <td>Manual</td>
+                <td>4</td>
+                <td>28</td>
+                <td>220</td>
+                <td bgcolor="red">$50,000</td>
+            </tr>
+            <tr id = "row3">
+                <td>BMW</td>
+                <td>5 Series</td>
+                <td>Automatic</td>
+                <td>5</td>
+                <td>26</td>
+                <td>300</td>
+                <td bgcolor="red">$55,000</td>
+            </tr>
+            <tr id = "row4">
+                <td>Mercedes</td>
+                <td>E-Class</td>
+                <td>Automatic</td>
+                <td>5</td>
+                <td>30</td>
+                <td>250</td>
+                <td bgcolor="red">$50,000</td>
+            </tr>
+            <tr id = "row5">
+                <td>Mercedes</td>
+                <td>C-Class</td>
+                <td>Automatic</td>
+                <td>4</td>
+                <td>32</td>
+                <td>200</td>
+                <td bgcolor="red">$48,000</td>
+            </tr>
+            <tr id = "row6">
+                <td>Mercedes</td>
+                <td>S-Class</td>
+                <td>Automatic</td>
+                <td>5</td>
+                <td>28</td>
+                <td>350</td>
+                <td bgcolor="red">$80,000</td>
+            </tr>
+
+
+        </table><br>
+
+        <div class = "title" id = "title2"><h1>Rev Up Your Adventure: Explore Our Car Gallery</h1></div>
+        <div class = "container2">
+                
+            <div class = "gallery">
+                <div class = "item">
+                    <img src = "assets/f10.jpg" alt = "BMW F10" id = "image1"><button onclick="showSpecs('row1')" class="button" id = "button1">Show Details</button>
+                </div>
+                <div class = "item">
+                    <img src = "assets/f80.jpg" alt = "BMW F80" id = "image2"><button onclick="showSpecs('row2')" class="button" id = "button2">Show Details</button>
+                </div>
+                <div class = "item">
+                    <img src = "assets/f82.jpg" alt = "BMW F82" id = "image3"><button onclick="showSpecs('row3')" class="button" id = "button3">Show Details</button>
+                </div>
+                <div class = "item">
+                    <img src = "assets/W212.webp" alt = "Mercedes W212" id = "image4"><button onclick="showSpecs('row4')" class="button" id = "button4">Show Details</button>
+                </div>
+                <div class = "item">
+                    <img src = "assets/w222.jpg" alt = "Mercedes W222" id = "image5"><button onclick="showSpecs('row5')" class="button" id = "button5">Show Details</button>
+                </div>
+                <div class = "item">
+                    <img src = "assets/w205.jpg" alt = "Mercedes W205" id = "image6"><button onclick="showSpecs('row6')" class="button" id = "button6">Show Details</button>
+                </div>
+            </div>
+    
+        </div>
+        <br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+    </body>
+</html>

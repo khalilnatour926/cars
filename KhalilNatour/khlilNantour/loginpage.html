@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name = "viepoint" content="width-device, initial-scale = 1.0">
+
+        <title>Login</title>
+        
+        <style>
+
+            body
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                background-image: url(assets/background.jpg);
+                background-size: cover; 
+                background-repeat: no-repeat; 
+                height: 100vh;
+            }
+            .container 
+            {
+                background-color: rgba(255, 255, 255, 0.8); 
+                padding: 20px;
+                border-radius: 10px;
+                width: 300px;
+                margin: auto;
+                margin-top: 50px;
+                text-align: center;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+            }
+
+            .container h1, #create-account-form h2
+            {
+                color: #333;
+            }
+
+            #loginpage 
+            {
+                text-align: center;
+            }
+
+            #loginpage label 
+            {
+                display: inline-block;
+                width: 100px; 
+                text-align: center; 
+                margin-right: 10px; 
+            }
+
+            #loginpage input, #create-account-form input
+            {
+                width: 200px; 
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                border: 2px solid #ccc;
+                border-radius: 8px;
+            }
+
+            .forgotPassword 
+            {
+                color: #007bff;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            .forgotPassword:hover
+            {
+                font-size: 25px;
+                color:#1a3e65;
+                cursor: pointer;
+            }
+
+
+
+            .loginbutton, .createaccount
+            {
+                background: linear-gradient(to bottom, #007bff, #0056b3);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transform: transition 0.3 s ease;
+            }
+
+            .loginbutton:hover, .createaccount:hover 
+            {
+                background: linear-gradient(to bottom, #1a3e65, #020e1c);
+                transform: scale(1.1);
+            }
+
+            .or 
+            {
+                color: #534e4e;
+            }
+
+            
+            .or::before,
+            .or::after 
+            {
+                content: "";
+                display: block;
+                height: 1px;
+                background-color: #ccc;
+                margin: 10px 0;
+            }
+
+
+            #create-account-form
+            {
+                display: none;
+                background-color: rgba(255, 255, 255, 0.8); 
+                padding: 20px;
+                border-radius: 10px;
+                width: 300px;
+                margin: auto;
+                margin-top: 50px;
+                text-align: center;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+            }
+
+            #CreateAccountButton, #GoBack
+            {
+                background: linear-gradient(to bottom, #007bff, #0056b3);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transform: transition 0.3 s ease;
+            }
+
+            #CreateAccountButton:hover, #GoBack:hover
+            {
+                background: linear-gradient(to bottom, #1a3e65, #020e1c);
+                transform: scale(1.1);
+            }
+
+
+            #create-account-form h2 
+            {
+                margin-bottom: 20px;
+            }
+
+            #create-account-form label 
+            {
+                margin-bottom: 5px;
+                display: inline-block;
+                width: 100px; 
+                text-align: center; 
+                margin-right: 10px; 
+            }
+
+            .modal-overlay
+            {
+                display: flex;
+                position: fixed;
+                top: 0; 
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            #forgetPassword
+            {
+                display: none; 
+                position: fixed;
+                top: 50%; 
+                left: 50%; 
+                transform: translate(-50%, -50%);
+                background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                z-index: 1000; 
+            }
+
+            #forgetPassword label
+            {
+                
+                display: inline-block;
+                width: 100px; 
+                text-align: center; 
+                margin-right: 10px; 
+            }
+
+            #forgetPassword input
+            {
+                width: 200px; 
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                border: 2px solid #ccc;
+                border-radius: 8px;
+            }
+
+            #forgetPassword button
+            {
+                margin-top: 5px;
+                background: linear-gradient(to bottom, #007bff, #0056b3);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            #forgetPassword button
+            {
+                background: linear-gradient(to bottom, #007bff, #0056b3);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transform: transition 0.3 s ease;
+            }
+
+            #forgetPassword button:hover 
+            {
+                background: linear-gradient(to bottom, #1a3e65, #020e1c);
+                transform: scale(1.1);
+            }
+
+        </style>
+    </head>
+
+    <body>  
+        
+        <script>
+            function authentication()
+            {
+                /*we need to take the user name and the password*/
+                
+                var usernameinput = document.getElementById('username');
+                var passwordinput = document.getElementById('password');
+
+                var username = usernameinput.value;
+                var password = passwordinput.value;
+
+                if(username === "user" && password === "pass")
+                {
+                    alert("Authentication successefull!!! welcome" + username);
+                    /*use instead loading the page*/
+                    window.location.href = "index1.html";
+                }
+                else
+                {
+                    alert("Authentication Failed! check username and the Passowrd");  
+                }
+
+                usernameinput.value= "";
+                passwordinput.value = "";
+
+            }
+
+            function createaccount() 
+            {
+                var signin = document.getElementById('cont');
+                var createAccount = document.getElementById('create-account-form');
+
+                signin.style.display = 'none';
+                createAccount.style.display = 'block';
+            }
+
+            function gotologin()
+            {
+                var signin = document.getElementById('cont');
+                var createAccount = document.getElementById('create-account-form');
+
+                createAccount.style.display = 'none';
+                signin.style.display = 'block';
+
+            }
+
+            function checkvalidity()
+            {
+                var username = document.getElementById('username2').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                var confirmPassword = document.getElementById('confirm-password').value; 
+
+                if(username.trim() ===  "")
+                {
+                    alert("Please enter a username");
+                    return false;
+                }
+
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailRegex.test(email)) 
+                {
+                    alert('Please enter a valid email address');
+                    return false;
+                }
+
+                if (password.trim() === '') 
+                {
+                    alert('Please enter a password');
+                    return false;
+                }
+
+                if (confirmPassword.trim() === '') 
+                {
+                    alert('Please confirm your password');
+                    return false;
+                }
+
+                 // Check if password and confirm password match
+                if (password !== confirmPassword) 
+                {
+                    alert('Passwords do not match');
+                    return false;
+                }
+
+                else
+                {
+                    alert("Account Created");
+                    return true;
+                }
+            }
+
+            function forgetpass()
+            {
+                var modalOverlay = document.createElement('div');
+                modalOverlay.classList.add('modal-overlay');
+
+                var modalcontent = document.createElement('div');
+
+                var forgetPasswordDiv = document.querySelector('#forgetPassword');
+
+                forgetPasswordDiv.style.display = 'block'; 
+
+                modalcontent.innerHTML = forgetPasswordDiv.innerHTML;
+
+                modalOverlay.appendChild(modalcontent);
+
+                document.body.appendChild(modalOverlay);
+            }
+
+            function hideForgotPassword() 
+            {
+                var modalOverlay = document.querySelector('.modal-overlay');
+                var forgetPasswordDiv = document.querySelector('#forgetPassword');
+                if (modalOverlay) 
+                {
+                    forgetPasswordDiv.style.display = 'none'; 
+                    document.body.removeChild(modalOverlay);
+                }
+            }   
+            
+        </script>
+
+
+
+        <div class="container" id = "cont">
+
+            <h1>Sign in</h1>
+
+            <form id="loginpage">
+
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <br><br>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <br><br>
+
+                <button type="submit" class="loginbutton" onclick = "authentication()">Login</button>
+                <br><br>
+
+            </form>
+
+            <div class="forgotPassword" onclick="forgetpass()"> Forgot password? </div>
+            <br><br>
+
+            <div class="or">or</div>
+            <br><br>
+            <button type="button" class="createaccount" onclick = "createaccount()">Create account</button>
+        </div>
+
+        <div id="create-account-form">
+            <h2>Create Account</h2>
+            <form>
+                <label for="username2">Username:</label>
+                <input type="text" id="username2" name="username" placeholder = "Username">
+                <br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder = "Email">
+                <br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder = "Password">
+                <br><br>
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder = "Confirm Password">
+                <br><br>
+                
+                <button id = "CreateAccountButton" onclick = "checkvalidity()">Create Account</button>
+
+                <button id = "GoBack" onclick = "gotologin()">Back</button>
+
+            </form>
+        </div>
+
+        <div id="forgetPassword" class = "forget">
+
+            <h2>Forgot Password</h2>
+
+            <p>Enter your email address below to reset your password.</p>
+
+            <form>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="submit">Reset Password</button>
+            </form>
+
+            <button onclick="hideForgotPassword()">Close</button>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Car Requirements</title>
+    <style>
+        body 
+        {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        }
+
+        .top
+        {
+            text-align: center;
+        }
+        .top h2
+        {
+            color: #9c1f1f;
+        }
+        form 
+        {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label
+        {
+            
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select 
+        {
+            width: auto;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select 
+        {
+            height: auto; 
+        }
+
+        input[type="button"], input[type="reset"], button 
+        {
+            background-color: #9c1f1f;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover, input[type="reset"]:hover, button:hover 
+        {
+            background-color: #a04545;
+        }
+
+        button 
+        {
+            background-color:#9c1f1f;
+        }
+
+        button:hover 
+        {
+            background-color:  #a04545;
+        }
+        .male
+        {
+            margin-left: 25px;
+        }
+        .submit
+        {
+            width: 100%;
+        }
+        @media screen and (max-width: 600px) 
+        {
+            form
+            {
+                margin: 10px;
+            }
+            
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            overflow: auto;
+        }
+
+        /* Style for the modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Style for the close button */
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!--Her below the use of the label is already explained in the index1.html file-->
+    <div class="top">
+    <h2 >To book your car please complete the following:</h2>
+
+    <h3>Personal Information</h3></div>
+    <div class="content">
+    <form action="">
+        <label for="fname">First Name:</label>
+    <input type="text" id="fname"><br><br>
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname"><br><br>
+    
+        
+        <label for="gender">Gender:</label><br><br>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" id="male" value="Male" class="male"><br>
+        <label for="gender">Female</label>
+        <input type="radio" name="gender" id="female" value="Female"> <br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel"><br><br>
+        <label for="email">Email Address:</label>
+        <input type="email"><br><br>
+        <label for="Address">Address:</label>
+        <input type="text" placeholder="Country/City/Street">
+        <h3>About the car:</h3>
+        <p>Select the car:</p>
+        <select id="carSelect" multiple size = 5>
+            <option >BMW F10</option>
+            <option >BMW F180</option>
+            <option >BMW F82</option>
+            <option >BMW F15</option>
+            <option >BMW F25</option>
+            <option >BMW G07</option>
+            <option >BMW 750i</option>
+            <option >BMW 8 Series Gran Coupe</option>
+
+            <option >Mercedes W166</option>
+            <option >Mercedes GLA</option>
+            <option >Mercedes WGLC</option>
+            <option >Mercedes W212</option>
+            <option >Mercedes W222</option>
+            <option >Mercedes W205</option>
+        </select>
+        <br><br>
+        <label for="sdate">Select the start date:</label>
+        <input type="date" id="sdate"><br><br>
+        <label for="edate">Select the end date:</label>
+        <input type="date"><br><br>
+        <h3>Payment</h3>
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" placeholder="Enter card number" required>
+        <br><br>
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+        <br><br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+        <br><br>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+        <br><br>
+        <label for="name_on_card">Name on Card:</label>
+        <input type="text" id="name_on_card" name="name_on_card" placeholder="Enter name on card" required>
+        <br><br>
+        <img src="assets/payment.png" alt="Ways of payment">
+        <br><br>
+        <input type = "button" value = "Submit" class="submit"  onclick = "generateThankYouMessage()">    <input type = "reset" Value = "Reset"> <button onclick="window.location.href='index1.html'">Home</button>
+        
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>Thank You!</h2>
+                <p id="messageContent"></p>
+            </div>
+        </div>
+    
+        <script>
+            function generateThankYouMessage() {
+                var firstName = document.querySelector('#fname').value;
+                var lastName = document.querySelector('#lname').value;
+                var selectedCar = document.querySelector('#carSelect').value;
+                var startDate = document.querySelector('#sdate').value;
+    
+                var message = "Hey " + firstName + " " + lastName + ", you have successfully booked your car " + selectedCar + " at the date " + startDate;
+    
+                // Display the modal overlay with the thank you message
+                document.getElementById('messageContent').innerText = message;
+                document.getElementById('modalOverlay').style.display = "block";
+            }
+    
+            function closeModal() {
+                document.getElementById('modalOverlay').style.display = "none";
+            }
+        </script>
+    </form>
+    </div>
+</body>
+</html>

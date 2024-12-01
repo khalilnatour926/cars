@@ -1,0 +1,1167 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viepoint" content="width-device, initial-scale = 1.0">
+        <title>
+           Car Rental home
+        </title>
+
+        <style>
+
+            body 
+            {
+                background-image: url(assets/background.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed; 
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(171, 163, 153);
+            }
+
+
+
+            header
+            {
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid black;
+                box-shadow: 0px 0px 3px;
+            }
+
+            .header1
+            {
+                font-size: 16px;
+                padding: 15px 25px;
+            }
+
+            .header1 h1
+            {
+                color: white;
+            }
+
+
+            .logo 
+            {
+                display: inline-block;
+                position: relative;
+                margin-top: 20px;
+                margin-right: 3px;
+            }
+            .logo img 
+            {
+                transition: transform 0.3s ease;
+                display: block;
+                box-shadow: 0 4px 8px rgba(1, 2, 3, 2);
+                border-radius: 3%;
+            }
+            .logo:hover
+            {
+                background-color: rgba(255, 255, 255, 0); 
+                transform: scale(1.1); 
+            }
+
+            .menubar 
+            {
+                background-color: #a99898; 
+                padding: 5px 0; 
+            }
+
+            .menubar ul 
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menubar ul li
+            {
+                display: inline-block; 
+                margin-right: 40px; 
+            }
+
+            .menubar ul li a 
+            {
+                color: white;
+                font-weight: bold;
+                text-decoration: none; 
+                padding: 10px 20px; 
+                display: block;
+            }
+
+            .menubar ul ul
+             {
+                display: none;
+                position: absolute; 
+                background-color: #333; 
+                border-radius: 8px; 
+                border: 3px solid black;
+                box-shadow: 0px 10px 10px ;
+             }
+
+            .menubar ul ul li 
+            {
+                display: block; 
+                margin-right: 0; 
+                transition: background-color 0.3s ease, font-size 0.3s ease;
+            }
+
+            .menubar ul ul li:hover 
+            {
+                background-color: #555;
+                font-size: 18px; 
+            }
+
+            .menubar ul ul li a 
+            {
+                padding: 10px 15px; 
+            }
+
+
+            .menubar ul li:hover > ul 
+            {
+                display: block;
+            }
+
+            
+
+            #aboutus:hover
+            {
+                cursor: pointer;
+            }
+            .header3
+            {
+                display: inline-block;
+                padding:50px 20px;
+                position: relative;
+            }
+
+
+            
+            .button
+            {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+                border: none;
+                text-align: center;
+                cursor: pointer;
+                padding: 10px 10px;
+                border-radius: 5px;
+                background: linear-gradient(to bottom, rgb(213, 194, 194), rgb(142, 131, 131));
+                transition: transform 0.8s ease;
+            }
+            .button:hover
+            {
+                transform: scale(1.05);
+                background: linear-gradient(to bottom, rgb(137, 85, 85), rgb(88, 29, 29));
+                transition: background 0.8s ease;
+
+            }
+            .button-link
+            {
+                text-decoration: none;
+                color: black;
+            }
+
+
+
+            .firstpics 
+            {
+                text-align: center; 
+                margin-top: 50px;
+                margin-bottom: 20px; 
+            }
+            .firstpics img 
+            {
+                width: 300px; 
+                height: 200px; 
+                margin: 20px; 
+                border-radius: 10px; 
+                border: 2px solid black;
+                box-shadow: 0 10px 10px black;
+                transition: transform 0.3s ease;
+            }
+            .firstpics img:hover
+            {
+                transform: scale(1.3);
+                margin: 40px;
+                border: 4px solid black;
+            }
+            .firstpics h1
+            {
+                font-size: 32px; 
+                color: white; 
+                margin-top: 20px; 
+            }
+
+
+
+            .contact
+            {
+                display: none;
+                text-align: center;
+                font-size: 10px;
+                width: 100%;    
+            }
+
+
+            
+            .carcat
+            {
+                border:1px solid black;
+                box-shadow: 0px -2px 6px black;
+                text-align: center;
+            } 
+            .carcat h1
+            {
+                color: white;
+            }
+            .carcat img
+            {
+               margin-top: -90px;
+            }
+            .category
+            {
+                text-align: left;
+                display: block;
+                width: 90%;
+                margin: auto;
+                margin-top: 20px;
+                padding-left: 2px;
+                border-radius: 10px;
+                border: 2px solid black;
+                background-color: rgb(222, 200, 200);
+                transition: transform 0.3s ease;
+                position: relative;
+
+            }
+            #sedan
+            {
+                margin-left: 1%;
+                box-shadow: -4px 4px 6px black;
+            }
+            #SUVs
+            {
+            
+                margin-left: 2%;
+                box-shadow: -4px 4px 6px black;
+            }
+            #lux
+            {
+                margin-left: 4%;
+                box-shadow: -4px 4px 6px black;
+            }
+
+            #sedan:hover, #lux:hover,  #SUVs:hover
+            {
+                transform: scale(1.1);
+                margin-left: 5%;
+            }
+            .category img 
+            {
+                position: absolute;
+                left: 75%;
+                bottom: 30%;
+                border-radius: 3px;
+                box-shadow: 0px 2px 4px rgba(147, 38, 38, 0.8); 
+                transition: box-shadow 0.3s ease; 
+            }
+            .category img:hover 
+            {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8); 
+            }
+
+
+
+            
+
+            #Book img
+            {
+                margin-top: 30px;
+                border-radius: 10px; 
+                box-shadow: 0 30px 20px black;
+                transition: transform 0.3s ease;
+            }
+            #Book img:hover
+            {
+                transform: scale(1.3);
+                transform: rotateY(360deg);
+               
+            }
+
+            #Book h1
+            {
+                color: white;
+            }
+            
+            .car-booking-section 
+            {
+                background-color: #f2f2f2;
+                text-align: 
+                center;
+                padding: 20px;
+            }
+
+            .car-booking-section h2
+            {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .car-booking-section p 
+            {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .start-button 
+            {
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .start-button:hover
+            {
+                background-color: #0056b3;
+            }
+           .card-container 
+           {
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start; 
+                padding: 20px;
+            }
+            .card 
+            {
+                background-color: #f2f2f2;
+                width: 45%; 
+                padding: 20px;
+                border-radius: 10px;
+                box-sizing: border-box; 
+            }
+            .card h2 
+            {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .card p 
+            {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .exp-button,
+            .str-button 
+            {
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .explore-button:hover,
+            .start-button:hover 
+            {
+                background-color: #0056b3;
+            }
+
+            #offers h1
+            {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            /*CSS for offers*/
+            #offers 
+            {
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .offer-card 
+            {
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                background-color: #f9f9f9;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .offer-card:hover
+            {
+                transform: translateY(-5px);/*AI*/
+            }
+
+           
+
+           /*CSS for the table*/
+            table 
+            {
+                width: 80%;
+                margin: auto;
+                border-collapse: separate;
+                border-spacing: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            table caption
+            {
+                margin-top: 20px;
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            table caption:hover
+            {
+                transform: scale(1.1);
+                color: #e7cfcf;
+
+            }
+            th, td 
+            {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+
+            th 
+            {
+                background-color: #f2f2f2;
+                color: blue;
+            }
+
+            tr:nth-child(even) 
+            {
+                background-color: #7b5c5c;
+            }
+
+            tr:nth-child(odd) 
+            {
+                background-color: #6d6969;
+                color: white;
+            }
+
+            th, td 
+            {
+                box-shadow: 0px 0px 0px 1px #ddd; 
+            }
+
+            td 
+            {
+                padding: 15px;
+            }
+
+            #tran0
+            {   
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            #tran0:hover
+            {
+               color: #e7cfcf;
+            }
+
+            .or 
+            {
+                text-align: center;
+                font-size: 30px;
+                color: #ece4e4;
+                margin: 20px 0;
+            }
+
+            .or::before,
+            .or::after 
+            {
+                content: "";
+                display: inline-block;
+                width: 40%; 
+                height: 1px;
+                background-color: #ede2e2;
+                vertical-align: middle;
+            }
+
+
+            .trip-form 
+            {
+                width: 80%;
+                margin: 50px auto;
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(38, 35, 35, 0.1);
+                padding: 20px;
+            }
+
+           
+            p 
+            {
+                margin-bottom: 10px;
+            }
+
+            ul 
+            {
+                list-style-type: none;
+                padding: 0;
+                text-align: left;
+            }
+
+            ul li 
+            {
+                margin-bottom: 10px;
+            }
+
+            ul li span 
+            {
+                font-weight: bold;
+            }
+
+            ul li span, ul li 
+            {
+                color: black;
+            }
+
+            form 
+            {
+                margin-bottom: 20px;
+            }
+
+            label 
+            {
+                display: block;
+                color: blue;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            /*AI*/
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="date"],
+            input[type="time"],
+            input[type="text"]:focus,
+            input[type="tel"]:focus,
+            input[type="email"]:focus,
+            input[type="date"]:focus,
+            input[type="time"]:focus 
+            {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            select
+             {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+            /*AI*/
+            input[type="submit"],
+            input[type="reset"],
+            button 
+            {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: blue;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+            /*AI*/
+            input[type="submit"]:hover,
+            input[type="reset"]:hover,
+            button:hover 
+            {
+                background-color: darkblue;
+            }
+
+
+            #reviewssection
+             {
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                color: white;
+                font-size: 20px;
+            }
+
+            #reviewssection h1
+            {
+                color: white;
+            }
+
+            .note 
+            
+            {
+                margin-bottom: 10px;
+            }
+
+            .terms 
+            {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+
+            .agreement 
+            {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .agreement input[type="checkbox"] 
+            {
+                margin-right: 6px;
+            }
+
+            .email-section label,
+            .commentsection textarea,
+            .rating-section label
+            {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .email-section input[type="email"] 
+            {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .email-section button,
+            .commentsection button 
+            {
+                padding: 10px 20px;
+                margin-top: 10px;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .email-section button:hover,
+            .commentsection button:hover 
+            {
+                background-color: darkred;
+            }
+
+            .commentsection textarea 
+            {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .actions 
+            {
+                margin-top: 10px;
+            }
+
+            .ratingsection select 
+            {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+                        @media screen and (max-width: 600px) {
+                form {
+                    margin: 10px;
+                }
+            }
+
+            .modal-overlay
+            {
+                display: flex;
+                position: fixed;
+                top: 0; 
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(228, 220, 220, 0.8);
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            #about-us
+            {
+                display: none;
+                max-width: 800px;
+                margin: 0;
+                margin: auto;
+                padding: 20px;
+                background: rgba(221, 212, 212, 0.8);
+                border-radius: 15px;
+            }
+
+            #sameasaboutus
+            {
+                max-width: 800px;
+                margin: 0;
+                margin: auto;
+                padding: 20px;
+                background: rgba(221, 212, 212, 0.8);
+                border-radius: 15px;
+            }
+
+            #about-us h2, #sameasaboutus h2
+            {
+                color: #a52626;
+                font-size: 25px;
+                margin-bottom: 25px;
+            }
+
+            #about-us h3, #sameasaboutus h3 
+            {
+                color: #967070;
+                font-size: 20px;
+                margin-top: 30px;
+            }
+
+            #about-us p, #about-us ul, #sameasaboutus p, #sameasaboutus ol
+            {
+                color: #4f4949;
+                font-size: 16px;
+                line-height: 2;
+                margin-bottom: 15px;
+            }
+
+            #about-us ul
+            {
+                list-style-type: circle;
+                margin-left: 20px;
+            }
+
+
+        </style>
+    </head>
+
+    <body link="0000FF" vlink="800080" alink="FF0000">
+        <!--the function below is used to hide the contact info util the user click on help me-->
+        <script>
+            function showcontactinfo() 
+            {
+                var contactDiv = document.querySelector('.contact');
+
+                if (contactDiv.style.display === 'none') 
+                {
+                    contactDiv.style.display = 'block';
+                } else 
+                {
+                    contactDiv.style.display = 'none';
+                }
+            }
+
+            function showaboutus()
+            {
+                var aboutusDiv = document.querySelector('#about-us');
+                    
+                aboutusDiv.style.display = 'block';
+            }
+
+            function hideaboutus()
+            {
+                var aboutusDiv = document.querySelector('#about-us');
+
+                aboutusDiv.style.display = "none"
+            }
+        </script>
+
+        <header>
+            <div class = "header1">
+                <h1>Fast & Easy Way To<br> Rent A Car</h1>
+            </div> 
+            
+            <!--make a logo-->
+            <div class = "logo">
+                <img src="assets/khalilcompany.png" alt="">
+            </div>
+
+            <div class = "header3">
+                <button class = "button"><a href="booking.html" class= "button-link">My Booking</a></button>
+                
+                <button class = "button" onclick = "showcontactinfo()"> Help me </button>
+                <div class ="contact">
+                    <h1 style = "color: red;">Contact information:</h1>
+                    <button class = "button"><a href="mailto:khalil.natour@gamil.com" class= "button-link">Email</a></button>
+                
+                    <!--here i got this from online sources-->
+                    <button class = "button"><a href="https://wa.me/+96176774594" class= "button-link">Watsapp</a></button>
+                 </div>
+        
+            </div>
+        </header>
+
+        
+
+         <!--Menu Bar-->
+        <nav class = "menubar">
+            <ul class = "row">
+                <li class = "column"><a href="index1.html" class = "menulinks">Home</a></li>
+                <li class = "column"><a href="#Book" class = "menulinks">Booking</a>
+                    <ul class ="row">
+                        <li class = "roww"><a href="#offers" class = "menulinks">Offers</a></li>
+                        <li class = "roww"><a href="#vip" class = "menulinks">VIP Pick Up</a></li>
+                    </ul>
+                </li>
+                <li class = "column"><a class = "menulinks" href="#reviewssection" >Review</a></li>
+                <li class = "column"><a class = "menulinks" onmouseover = "showaboutus()" id = "aboutus">About Us</a></li>
+            </ul>
+        </nav>
+
+        <div id="about-us" onmouseleave="hideaboutus()">
+            <h2>About Us</h2>
+            <p>Welcome to Khalil Natour Car Rental in Saida, Lebanon.</p>
+            
+            <h3>Our Mission</h3>
+            <p>We aim to provide exceptional car rental experiences with top-quality vehicles, personalized service, and competitive rates.</p>
+            
+            <h3>Our Services</h3>
+            <ul>
+                <li>SUVs: Versatile for outdoor adventures.</li>
+                <li>Sedans: Ideal for everyday commuting.</li>
+                <li>Luxury Cars: Offering elegance and comfort.</li>
+            </ul>
+            
+            <h3>Our Commitment</h3>
+            <p>We prioritize safety, comfort, and customer satisfaction. Our vehicles undergo regular maintenance, and our team provides personalized assistance.</p>
+            
+            <h3>Contact Us</h3>
+            <p>Book your next adventure with us today! Contact Khalil Natour Car Rental for reservations and inquiries.</p>
+        </div>
+        
+
+        <!--This div for the very first part of the website-->
+        <!--hspace to keep the pictures apart-->
+        <div class = "firstpics">
+            <h1>Drive the Experience, Rent the Journey.</h1>
+            <center><img src = "assets/carrent.jpg"  alt ="Best service Happy costumer"><img src = "assets/carrent1.jpg" width = 40% lenght = 15% alt ="Best service Happy costumer"></center>
+        </div>
+        
+        <!--This div includes a general about the cars that this website provide-->
+        <div class = "carcat">
+
+            <h1>Discover Car Categories</h1>
+
+            <div class = "category" id = "sedan">
+                <h2>Sedan</h2>
+                 <ul> 
+                    <li>Description: Ideal for everyday commuting and small families, sedans offer a balance of fuel efficiency and comfort.</li>
+                    <li>Specifications
+                        <ul type = "square"> <img src="assets/sedan.jpg" alt="" lenght = "20%" width = "20%" align = "right">
+                            <li>Fuel Type: Gasoline</li>
+                            <li>Seating Capacity: 4-5 passengers</li>
+                            <li>Average Fuel Efficiency: 25-35 MPG</li> 
+                            <li>Features: Air conditioning, power windows, advanced safety features.</li>
+                            <a href="sedancar.html"><button class = "button">Sedan</button></a>
+                            <!--<form align = "right"><a href="sedancar.html"><input type = "button" value = "View more" style="color: red;"></a></form>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "category" id = "SUVs">
+                <h2>SUVs</h2>
+                <ul>
+                    <li>Description: SUVs are versatile, providing ample space for passengers and cargo. They're suitable for families and outdoor activities.</li>
+                    <li>Specifications
+                        <ul type = "square"><img src="assets/SUV.jpg" alt="" lenght = "20%" width = "20%" align = "right">
+                            <li>Fuel Type: Gasoline or Hybrid</li>
+                            <li>Seating Capacity: 5-7 passengers</li>
+                            <li>Average Fuel Efficiency: 20-30 MPG</li>
+                            <li>Features: All-wheel drive, spacious interior, advanced infotainment.</li>
+                            <a href="suvcar.html"><button class = "button">SUV</button></a>
+                            <!--<form align = "right"><a href="suvcar.html"><input type = "button" value = "View more" style="color: red;"></a></form>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "category" id = "lux">
+                <h2>Lux</h2>
+                 <ul>
+                    <li>Description: Luxury cars offer premium features, advanced technology, and a higher level of comfort. They are suitable for those who seek <br>a refined driving experience.</li>
+                    <li>Specifications
+                        <ul type = "square"><img src="assets/luxury.jpg" alt="" lenght = "20%" width = "20%" align = "right">
+                            <li>Fuel Type: Gasoline or Hybrid</li>
+                            <li>Seating Capacity: 4-5 passengers</li>
+                            <li>Average Fuel Efficiency: 20-30 MPG</li>
+                            <li>Features: Leather upholstery, advanced safety systems, high-end entertainment.</li>
+                            <a href="luxcar.html"><button class = "button">Luxry</button></a>
+                            <!--<form align = "right"><a href="luxcar.html"><input type = "button" value = "View more" style="color: red;"></a></form>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+        </div>
+
+
+        
+        <!--this div for the booking-->
+        <div id = "Book">
+        <!--center tag in order to align the picture-->
+        <center><img src = "assets/book.jpeg" width = 30% length = 30% alt = "it seems that you are trying to book your car!" id ="bookimg"></center>
+        <h1 align = "center" >Book Now</h1>
+
+       
+        <div id="Book" class="card-container">
+            <div class="card">
+                <div class="c1">
+                    <h2>Our Service</h2>
+                    <p>Experience luxury on wheels with our premier car rental service.</p>
+                    <p>Drive your dreams with our hassle-free car rental solutions.</p>
+                    <p>Explore freedom with our diverse and reliable car rental options.</p>
+                    <p>Click below to explore the adventure.</p>
+                    <button class="exp-button"><a href="sedancar.html" class = "button-link">Explore</a></button>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Online Booking</h2>
+                <p>Our Service</p>
+                <p>You can Book your car online</p>
+                <p>The car could be delivered to you upon request</p>
+                <p>Click below to start the adventure</p>
+                <button class="stabutton"><a href="booking.html" class= "button-link">Start Booking</a></button>
+            </div>
+        </div>
+        
+        </div>
+        <br><br>
+        </div>
+
+
+
+        <!--offers section-->
+        <section id="offers">
+            <h1>Offers</h1>
+            <div class="offer-card">
+                <h2>1 Car:</h2>
+                <p>The offers for single-car rentals are delineated, showcasing different scenarios.</p>
+                <ul>
+                    <li>
+                        <span>Discount Percentage:</span> Two discount options are provided - 5% and 10%, allowing renters to enjoy reduced rates based on their preferences.
+                    </li>
+                    <li>
+                        <span>Free Additional Driver:</span> Customers can opt for an offer that includes a free additional driver for added convenience.
+                    </li>
+                    <li>
+                        <span>Free Upgrade:</span> While both options provide a discount, only the 10% discount option offers a free upgrade.
+                    </li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <h2>2 Cars:</h2>
+                <p>The table extends its offerings to those renting two cars simultaneously, with heightened benefits.</p>
+                <ul>
+                    <li>
+                        <span>Discount Percentage:</span> Two significant discount options are presented - 15% and 20%, ensuring substantial savings for customers choosing a dual-car rental.
+                    </li>
+                    <li>
+                        <span>Free Additional Driver:</span> Both scenarios for two-car rentals include a complimentary additional driver, enhancing the overall rental experience.
+                    </li>
+                    <li>
+                        <span>Free Upgrade:</span> Customers opting for the dual-car rental are entitled to a free upgrade, further elevating the rental package.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+            <table>
+                <caption>Kindly Find Below the Attached Offers</caption>
+                <tr>
+                    <th rowspan="2">Number of Cars</th>
+                    <th colspan="3">Offer Details</th>
+                </tr>
+                <tr>
+                    <th>Discount Percentage</th>
+                    <th>Free Additional Driver</th>
+                    <th>Free Upgrade</th>
+                </tr>
+                <tr>
+                    <td rowspan="2">1 Car</td>
+                    <td>5%</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>10%</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2 Cars</td>
+                    <td>15%</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>20%</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+            </table>
+            </table>
+            <h1 align = "center" id = "tran0"> Start booking</h1>
+            <center id = "trans1"><button class = "button"><a href="booking.html" class= "button-link">Start Booking</a></button></center>
+        </section>
+
+
+        <!-- The VIP feature-->
+        <div id = "vip">
+
+            <div class="or">or</div>
+
+            <div class="trip-form">
+                <h1>Make Your Trip</h1>
+                <!-- Form for personal information -->
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label for="gender">Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br><br>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone"><br><br>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                </form>
+                <hr color="blue">
+                
+                <!-- Form for car selection and trip details -->
+                <form>
+                    <h2>Choose the Car You Want:</h2>
+                    <select name="car">
+                        <option value="BMW F10">BMW F10</option>
+                        <!-- Add other car options here -->
+                    </select><br><br>
+                    <h2>Pick-Up Location</h2>
+                    <input type="text" name="pickup-location" placeholder="City, Airport, Station, etc"><br><br>
+                    <h2>Drop-Off Location</h2>
+                    <input type="text" name="dropoff-location" placeholder="City, Airport, Station, etc"><br><br>
+                    <h2>Pick-Up Date & Drop-Off Date</h2>
+                    <input type="date" name="pickup-date">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="date" name="dropoff-date"><br><br>
+                    <h2>Pick-Up Time</h2>
+                    <input type="time" name="pickup-time"><br><br>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </form>
+                <hr color="blue">
+                
+                <!-- Form for payment -->
+                <form>
+                    <h2>Payment</h2>
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" placeholder="Enter card number" required><br><br>
+                    <label for="expiry_date">Expiry Date:</label>
+                    <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required><br><br>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required><br><br>
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" placeholder="Enter amount" required><br><br>
+                    <label for="name_on_card">Name on Card:</label>
+                    <input type="text" id="name_on_card" name="name_on_card" placeholder="Enter name on card" required><br><br>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                    <button onclick="window.location.href='index1.html'">Home</button>
+                </form>
+            </div>
+
+
+
+
+
+        <!--Customer Reviews & Testimonials-->
+        <div id="reviewssection">
+            <div id = "sameasaboutus">
+                <h1>Reviews</h1>
+                <h2>Customer Reviews & Testimonials</h2>
+                <form>
+                    <p class="note">To keep your review anonymous, please register with your email. It will also help us to reply to you.</p>
+                    <p class="note"><b>By submitting a review, you agree to the following terms:</b></p>
+                    <ol class="terms">
+                        <li>Honesty: Provide honest and accurate information about your experience.</li>
+                        <li>Respectful Language: Use respectful and courteous language.</li>
+                        <li>Verification: We may verify the authenticity of the review.</li>
+                        <li>Privacy: Do not include personal information.</li>
+                        <li>Consequences: Violation may result in the removal of the review.</li>
+                    </ol>
+            </div>
+                <label class="agreement">
+                    <input type="checkbox">
+                    <span>Agree to terms</span>
+                </label>
+                <div class="email-section">
+                    <label for="email">Enter your Email Address:</label>
+                    <input type="email" id="email">
+                    <button type="submit">Confirm</button>
+                    <button type="reset">Reset</button>
+                </div>
+                <div class="commentsection">
+                    <textarea placeholder="Write down your comment..." rows="8"></textarea>
+                    <div class="actions">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </div>
+                <div class="ratingsection">
+                    <label for="rating">Rate us out of 10:</label>
+                    <select id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
